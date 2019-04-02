@@ -1,0 +1,26 @@
+spring:
+  main:  #关闭 banner 注意 off要带引号
+    banner-mode: "off"
+  datasource:
+    url: jdbc:mysql://127.0.90.52:3308/yykt?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&allowMultiQueries=true
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: yykt
+    password: yykt!@#*
+# dubbo  provider配置信息
+dubbo:
+  scan:
+    base-packages: com.xin.dubbo.provider
+  protocol:
+    name: dubbo
+    port: 20880
+    host:
+  application:
+    name: my-dubbo-provider
+  registry:
+    address: zookeeper://127.0.30.185:2181
+    check: false
+  provider:
+    timeout: 2000
+
+
